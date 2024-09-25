@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 const font = require("./src/constants/font");
+const colors = require("./src/constants/colors");
 
 const config: Config = {
   content: [
@@ -10,8 +11,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        ...colors, // 불러온 colors 상수를 펼쳐서 적용
       },
       fontSize: font,
       spacing: {
