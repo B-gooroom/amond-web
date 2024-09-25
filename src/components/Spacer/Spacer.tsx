@@ -1,0 +1,12 @@
+import { forwardRef } from "react";
+
+export const Spacer = forwardRef<
+  HTMLDivElement,
+  React.ComponentPropsWithoutRef<"div">
+>(({ className, children, role = "presentation", ...rest }, ref) => {
+  return (
+    <div role={role} className={className} {...rest} ref={ref}>
+      {children}
+    </div>
+  );
+});
