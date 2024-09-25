@@ -33,7 +33,7 @@ export default function Header({ title, items }: HeaderProps) {
     <nav
       className={classnames(
         "flex items-center justify-start bg-white w-full sticky top-0",
-        width < 500 ? "py-[16px] px-[20px]" : "py-[34px] px-[32px]"
+        width < 500 ? "py-16 px-20" : "py-[34px] px-[32px]"
       )}
     >
       <div className="flex items-center justify-between w-full text-black">
@@ -49,7 +49,7 @@ export default function Header({ title, items }: HeaderProps) {
         /> */}
         <p className="text-h3">{title}</p>
         {items && (
-          <div className="flex justify-between gap-[8px]">
+          <div className="flex justify-between gap-8">
             {items.map((item) => {
               return <button>{item}</button>;
             })}
