@@ -1,7 +1,11 @@
-export default function Popular() {
+interface PopularProps {
+  index: number;
+}
+
+export default function Popular({ index }: PopularProps) {
   return (
     <div className="flex gap-14 border px-16 py-24 rounded-2xl">
-      <div className="text-subtitle1">1</div>
+      <div className="text-subtitle1">{index}</div>
       <div className="flex-col gap-8 flex">
         <p className="text-body2">사업자 등록증 신고할 때 궁금한 점</p>
         <p className="text-caption1">
