@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 const font = require("./src/constants/font");
-const colors = require("./src/constants/colors");
+const colors = require("./src/constants/colors").default;
 
 const config: Config = {
   content: [

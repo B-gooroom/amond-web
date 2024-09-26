@@ -19,7 +19,7 @@ export default function List({
 }: ListProps) {
   return (
     <div className="flex-col flex gap-8">
-      <Label size="small" background="ad-gray-100">
+      <Label size="small" color="gray">
         {label}
       </Label>
       <p className="text-body2">{title}</p>
