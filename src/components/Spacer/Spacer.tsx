@@ -10,3 +10,23 @@ export const Spacer = forwardRef<
     </div>
   );
 });
+
+// import React from "react";
+
+// export function Spacer(
+//   {
+//     className,
+//     children,
+//     role = "presentation",
+//     ...rest
+//   }: React.ComponentPropsWithoutRef<"div">,
+//   ref: React.Ref<HTMLDivElement>
+// ) {
+//   return (
+//     <div role={role} className={className} {...rest} ref={ref}>
+//       {children}
+//     </div>
+//   );
+// }
+
+// export default React.forwardRef(Spacer);

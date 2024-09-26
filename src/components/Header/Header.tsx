@@ -1,5 +1,5 @@
 import classnames from "classnames";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface HeaderProps {
   title: string;
@@ -9,25 +9,25 @@ interface HeaderProps {
 export default function Header({ title, items }: HeaderProps) {
   const [width, setWidth] = useState<number>(0);
 
-  // useEffect(() => {
-  //   const width = typeof window !== "undefined" ? window.innerWidth : 0;
-  //   setWidth(width);
+  useEffect(() => {
+    const width = typeof window !== "undefined" ? window.innerWidth : 0;
+    setWidth(width);
 
-  //   const handleResize = () => {
-  //     setWidth(window.innerWidth);
-  //   };
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
 
-  //   // 초기 width 값 설정
-  //   handleResize();
+    // 초기 width 값 설정
+    handleResize();
 
-  //   // 윈도우 리사이즈 이벤트 리스너 등록
-  //   window.addEventListener("resize", handleResize);
+    // 윈도우 리사이즈 이벤트 리스너 등록
+    window.addEventListener("resize", handleResize);
 
-  //   // 컴포넌트 언마운트 시 이벤트 리스너 제거
-  //   return () => {
-  //     window.removeEventListener("resize", handleResize);
-  //   };
-  // }, []);
+    // 컴포넌트 언마운트 시 이벤트 리스너 제거
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <nav
@@ -50,8 +50,8 @@ export default function Header({ title, items }: HeaderProps) {
         <p className="text-h3">{title}</p>
         {items && (
           <div className="flex justify-between gap-8">
-            {items.map((item) => {
-              return <button>{item}</button>;
+            {items.map((item, index) => {
+              return <button key={index}>{item}</button>;
             })}
           </div>
         )}
