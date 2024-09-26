@@ -26,13 +26,9 @@ export default function List({
       <div className="flex gap-16 w-full border-b pb-12">
         <div className="flex-col flex">
           <span className="text-caption1 flex-grow">{description}</span>
-          <dl className="text-caption1 flex gap-2">
-            <dt>답변</dt>
-            <dd>{comments}</dd>
-            <span>･</span>
-            <dt>조회수</dt>
-            <dd>{views}</dd>
-          </dl>
+          <span className="text-caption1 flex gap-2 text-ad-gray-500">
+            답변 {comments} ･ 조회수 {views}
+          </span>
         </div>
         {imageUrl && (
           <div className="border rounded-2xl overflow-hidden w-[64px] h-[64px] flex-shrink-0">
